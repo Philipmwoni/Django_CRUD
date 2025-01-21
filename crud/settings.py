@@ -84,7 +84,7 @@ DATABASES = {
         'USER': DB_USER,
         'PASSWORD': DB_USER_PASSWORD,
         'HOST': DB_HOST,
-        'PORT': GIT DB_PORT,
+        'PORT': DB_PORT,
     }
 }
 

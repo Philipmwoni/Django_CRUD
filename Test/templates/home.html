@@ -3,31 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>website</title>
+    <title>Document</title>
+
 </head>
-<body>
-    <div class="navigation">
+<body class="body">
+    <div class="box">
         <ul>
-            <li>Home</li>
-            <li>services</li>
-            <li>About us</li>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'register' %}">Register</a></li>
+            <li><a href="#">Contacts</a></li>
+            <li><a href="#">About us</a></li>
         </ul>
     </div>
 
-    <h4>Marketing</h4>
-    <p>Marketing is the process of identifying, anticipating, and satisfying customer needs and wants through the creation,
-         promotion, distribution, and selling of products or services. It aims to build strong customer relationships and
-         deliver value, ultimately driving business growth.
-
-    </p>
-
-    <h3>Affliate markerting</h3>
-    <p>Affiliate marketing is a performance-based marketing strategy where businesses reward individuals
-     (affiliates) for driving traffic, leads, or sales through the affiliate's marketing efforts.
-     Affiliates promote a company's products or services using a unique tracking link and
-     they earn a commission for every successful conversion (e.g., sale or lead) attributed to their referral.
-
-    </p>
-
 </body>
 </html>
+
