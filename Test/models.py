@@ -1,9 +1,14 @@
 from django.db import models
+from django.core.validators import MinLengthValidator, MaxLengthValidator
+
 
 # Create your models here.
 class Tutors(models.Model):
      name=models.CharField(max_length=50)
-     department=models.CharField(max_length=50 , null=True)
+     department=models.CharField(max_length=20)
+     staff_number=models.IntegerField(max_length=5, validators=[MinLengthValidator(5), MaxLengthValidator(5)],
+                                      null=False, blank=False,default='default_value')
+
 
 
      def __str__(self):
