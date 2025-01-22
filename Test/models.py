@@ -3,6 +3,17 @@ from django.core.validators import MinLengthValidator, MaxLengthValidator
 
 
 # Create your models here.
+
+class Streams(models.Model):
+    STREAM_CHOICES = ('FORM ONE','FORM TWO','FORM THREE','FORM FOUR')
+    name=models.CharField(STREAM_CHOICES)
+
+
+
+class Classes(models.Model):
+    Streams=models.ForeignKey(Streams,on_delete=models.CASCADE)
+
+
 class Tutors(models.Model):
      name=models.CharField(max_length=50)
      department=models.CharField(max_length=20)
@@ -38,6 +49,7 @@ def __str__(self):
 
 
 class Students(models.Model):
+    classes=models.ForeignKey(Classes,on_delete=models.CASCADE)
     name = models.CharField(max_length=50)
     administration_number = models.IntegerField(max_length=6)
     lower_school = models.CharField(max_length=100)
