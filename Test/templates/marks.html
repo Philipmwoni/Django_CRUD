@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Marks</title>
+</head>
+<body>
+    <form method="POST" action="">
+
+           {% csrf_token %}
+           {{form_as.p}}
+
+
+
+          <button type="submit">submit</button>
+    </form>
+    <a href="{% url 'home' %}">Back</a>
+
+
+</body>
+</html>

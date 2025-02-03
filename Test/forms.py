@@ -8,8 +8,16 @@ class TutorsForm(forms.ModelForm):
         model = Tutors
         fields = '__all__'
 
-class UserForm(UserCreationForm):
-    class Meta:
-        model = User
-        fields = ('username', 'password1')
 
+
+class SubjectsForm(forms.ModelForm):
+    class Meta:
+        model = Subjects
+        fields = '__all__'
+
+
+
+class StudentsForm(forms.ModelForm):
+    class Meta:
+        model = Students
+        fields = '__all__'

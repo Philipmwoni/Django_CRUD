@@ -1,8 +1,9 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
-from .forms import TutorsForm
+from .forms import TutorsForm,SubjectsForm,StudentsForm
 from django.contrib import messages
-from django.contrib.auth import authenticate,login,logout
+from django.contrib.auth import authenticate, login,logout
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
@@ -14,6 +15,9 @@ def loginPage(request):
         staff_number=request.POST.get('staff_number')
 
         user=authenticate(request, name=name,department=department,staff_number=staff_number)
+        if user is not None:
+            login(request, user)
+
 
 
     return render(request, 'login.html')
@@ -44,3 +48,16 @@ def registerPage(request):
 def Homepage(request):
     return render(request,'home.html')
 
+
+@login_required(login_url='login')
+def Entermarks(request):
+    if request.method == 'POST':
+        form = SubjectsForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'successfully submitted!')
+            return redirect('home')
+        else:
+            messages.error(request, 'invalid input please try again')
+            form = SubjectsForm()
+    return render(request,'marks.html')

@@ -4,6 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .box{
+            color:white;
+            font-size:10px
+            display:flex;
+        }
+        li{
+            border:30px;
+            border-style: solid;
+            border-color: blue;
+            margin:10px;
+            background-color: blue;
+            border-radius:20px;
+        }
+        ul{
+            display: flex;
+        }
+        li:hover{
+            color:white
+        }
+    </style>
 
 </head>
 <body class="body">
@@ -13,6 +34,7 @@
             <li><a href="{% url 'register' %}">Register</a></li>
             <li><a href="#">Contacts</a></li>
             <li><a href="#">About us</a></li>
+            <li><a href="{% url 'studentmarks' %}">Enter marks</a></li>
         </ul>
     </div>
 
