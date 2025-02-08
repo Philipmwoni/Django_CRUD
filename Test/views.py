@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
-from .forms import TutorsForm,SubjectsForm,StudentsForm
+from .forms import SubjectsForm,StudentsForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login,logout
 from django.contrib.auth.decorators import login_required

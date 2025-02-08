@@ -5,6 +5,7 @@ from django.contrib.auth.models import AbstractUser
 
 # Create your models here.
 
+
 class Streams(models.Model):
     STREAM_CHOICES = ('FORM ONE','FORM TWO','FORM THREE','FORM FOUR')
     name=models.CharField(STREAM_CHOICES)
@@ -12,19 +13,14 @@ class Streams(models.Model):
 
 
 class Classes(models.Model):
+
     Streams=models.ForeignKey(Streams,on_delete=models.CASCADE)
 
 
-class Tutors(models.Model):
-     name=models.CharField(max_length=50)
-     department=models.CharField(max_length=20)
-     staff_number=models.IntegerField(max_length=5, validators=[MinLengthValidator(5), MaxLengthValidator(5)],
-                                      null=False, blank=False,default='default_value')
 
 
 
-     def __str__(self):
-          return self.name
+
 
 
 class Subjects(models.Model):
