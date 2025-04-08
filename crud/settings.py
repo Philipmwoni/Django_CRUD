@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Test',
     'Tutors',
+    'rest-framework',
 
 ]
 
